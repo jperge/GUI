@@ -55,6 +55,8 @@ OBJECTS := \
   $(OBJDIR)/AccessClass_de9602d5.o \
   $(OBJDIR)/PracticalSocket_2574ecc8.o \
   $(OBJDIR)/AudioComponent_521bd9c9.o \
+  $(OBJDIR)/PhaseDetectJPEditor_350ca361.o \
+  $(OBJDIR)/PhaseDetectJP_7e1e8794.o \
   $(OBJDIR)/Rectifier_21cc94b6.o \
   $(OBJDIR)/ArduinoOutput_d5a968de.o \
   $(OBJDIR)/ArduinoOutputEditor_e1b7e52b.o \
@@ -227,6 +229,16 @@ $(OBJDIR)/PracticalSocket_2574ecc8.o: ../../Source/Network/PracticalSocket.cpp
 $(OBJDIR)/AudioComponent_521bd9c9.o: ../../Source/Audio/AudioComponent.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling AudioComponent.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/PhaseDetectJPEditor_350ca361.o: ../../Source/Processors/PhaseDetectJP/PhaseDetectJPEditor.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling PhaseDetectJPEditor.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/PhaseDetectJP_7e1e8794.o: ../../Source/Processors/PhaseDetectJP/PhaseDetectJP.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling PhaseDetectJP.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/Rectifier_21cc94b6.o: ../../Source/Processors/Rectifier/Rectifier.cpp

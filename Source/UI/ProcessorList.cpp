@@ -73,7 +73,8 @@ ProcessorList::ProcessorList()
     filters->addSubItem(new ProcessorListItem("Spike Detector"));
     filters->addSubItem(new ProcessorListItem("Spike Sorter"));
     //filters->addSubItem(new ProcessorListItem("Resampler"));
-    filters->addSubItem(new ProcessorListItem("Phase Detector"));
+	filters->addSubItem(new ProcessorListItem("Phase Detector"));    
+	filters->addSubItem(new ProcessorListItem("Detect Phase JP"));
     //filters->addSubItem(new ProcessorListItem("Digital Ref"));
     filters->addSubItem(new ProcessorListItem("Channel Map"));
     filters->addSubItem(new ProcessorListItem("Common Avg Ref"));

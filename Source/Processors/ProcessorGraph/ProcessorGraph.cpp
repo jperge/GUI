@@ -41,6 +41,7 @@
 #include "../SpikeDetector/SpikeDetector.h"
 #include "../SpikeSorter/SpikeSorter.h"
 #include "../PhaseDetector/PhaseDetector.h"
+#include "../PhaseDetectJP/PhaseDetectJP.h"
 #include "../FileReader/FileReader.h"
 #include "../ArduinoOutput/ArduinoOutput.h"
 #include "../PulsePalOutput/PulsePalOutput.h"
@@ -593,12 +594,17 @@ GenericProcessor* ProcessorGraph::createProcessorFromDescription(String& descrip
             std::cout << "Creating a new event detector." << std::endl;
             processor = new EventDetector();
         }
-        else if (subProcessorType.equalsIgnoreCase("Phase Detector"))
-        {
-            std::cout << "Creating a new phase detector." << std::endl;
-            processor = new PhaseDetector();
-        }
-        else if (subProcessorType.equalsIgnoreCase("Channel Map"))
+		else if (subProcessorType.equalsIgnoreCase("Phase Detector"))
+		{
+			std::cout << "Creating a new phase detector." << std::endl;
+			processor = new PhaseDetector();
+		}
+		else if (subProcessorType.equalsIgnoreCase("Detect Phase JP"))
+		{
+			std::cout << "Creating a new phase detector with modifiable duration and threshold parameters." << std::endl;
+			processor = new PhaseDetector();
+		}
+		else if (subProcessorType.equalsIgnoreCase("Channel Map"))
         {
             std::cout << "Creating a new channel mapping node." << std::endl;
             processor = new ChannelMappingNode();
